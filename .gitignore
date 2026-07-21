@@ -1,0 +1,21 @@
+# PHREEQC logs
+*.log
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Experiment outputs (raw CSVs and input files are reproducible)
+experiments/single/*/leaching.csv
+experiments/single/*/neutralization.csv
+experiments/single/*/phreeqc.log
+experiments/single/*/input.phr
+experiments/cu_edta_tune/*/leaching.csv
+experiments/cu_edta_tune/*/neutralization.csv
+experiments/cu_edta_tune/*/phreeqc.log
+experiments/cu_edta_tune/*/input.phr
+experiments/cu_edta_tune/*/EDTA.phr
+
+# OS
+.DS_Store

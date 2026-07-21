@@ -1,0 +1,46 @@
+# NMC532 leachate — partially open system (limited dissolved O2)
+# O2 initial = 0.001 mol — models dissolved O2 at near-saturation in a 1 mL HTE vial
+# (~8 mg/L O2 at 25 C = 0.25 mmol/L; rounds to ~0.001 mol/kgw available)
+# Once consumed, pe drops and system becomes chemically reducing.
+
+leachate:
+  name: NMC532_partial
+  temperature_C: 25.0
+  pH_initial: 7
+  water_kg: 1.0
+  units: mol/kgw
+  composition:
+    Al2_SO4_3:   0.005463
+    FeSO4_7H2O:  0.005179
+    CuSO4:       0.020901
+    CoSO4_7H2O:  0.075241
+    NiSO4_6H2O:  0.126536
+    MnSO4_H2O:   0.060261
+
+neutralization:
+  reagent: NaOH
+  stock_molarity_M: 3.0
+  naoh_dose_mol: 0.627
+  steps: 50
+
+# o2_reservoir_mol controls initial O2(g) amount:
+#   10.0  = open system (atmospheric, large reservoir)
+#   0.001 = partially open (dissolved O2 only)
+#   absent = closed system (O2(g) not included)
+o2_reservoir_mol: 0.001
+
+equilibrium_phases:
+  - O2(g)
+  - Al(OH)3(am)
+  - Fe(OH)3(a)
+  - Cu(OH)2(s)
+  - Co(OH)2(s)
+  - Ni(OH)2(s)
+  - Mn(OH)2(s)
+  - Manganite
+  - Hausmannite
+
+knobs:
+  iterations: 6000
+  convergence_tolerance: 1.0e-7
+  tolerance: 1.0e-11

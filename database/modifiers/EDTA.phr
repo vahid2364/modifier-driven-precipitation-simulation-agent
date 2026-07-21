@@ -1,0 +1,75 @@
+# sit.dat already defines Edta as a master species (primary: Edta-4).
+# We only add metal-EDTA complexes not present in sit.dat.
+# Species names use sit.dat convention: Edta-4 (not EDTA-4).
+
+SOLUTION_SPECIES
+
+# ── EDTA protonation steps ────────────────────────────────────────────────────
+# log_k values from NIST/MINTEQ database (25°C, I=0)
+
+Edta-4 + 4H+ = H4Edta
+    log_k 22.36
+
+Edta-4 + 3H+ = H3Edta-
+    log_k 18.88
+
+Edta-4 + 2H+ = H2Edta-2
+    log_k 14.10
+
+Edta-4 + H+ = HEdta-3
+    log_k 6.16
+
+# ── Metal-EDTA complexes ──────────────────────────────────────────────────────
+# Stability constants from NIST (25°C, I=0)
+
+Cu+2 + Edta-4 = CuEdta-2
+    log_k 20.50
+
+Co+2 + Edta-4 = CoEdta-2
+    log_k 16.31
+
+Ni+2 + Edta-4 = NiEdta-2
+    log_k 18.62
+
+Mn+2 + Edta-4 = MnEdta-2
+    log_k 13.87
+
+# Fe-EDTA complexes: overridden from sit.dat with log_k -999 to suppress them.
+# Rationale: Fe(OH)3 precipitation is kinetically irreversible on HTE timescales.
+# Thermodynamic re-dissolution of Fe by EDTA is not observed experimentally
+# (Fe remains at 0 mg/L after precipitation at all NaOH equivalents).
+# PHREEQC processes input SOLUTION_SPECIES after the database, so these
+# definitions override sit.dat equivalents without modifying the database file.
+
+Fe+3 + Edta-4 = Fe(Edta)-
+    log_k -999
+
+Fe+2 + Edta-4 = Fe(Edta)-2
+    log_k -999
+
+Fe+3 + H+ + Edta-4 = Fe(HEdta)
+    log_k -999
+
+Fe+2 + H+ + Edta-4 = Fe(HEdta)-
+    log_k -999
+
+Fe+3 - H+ + Edta-4 + H2O = Fe(OH)(Edta)-2
+    log_k -999
+
+Fe+2 - H+ + Edta-4 + H2O = Fe(OH)(Edta)-3
+    log_k -999
+
+Fe+3 - 2 H+ + Edta-4 + 2 H2O = Fe(OH)2(Edta)-3
+    log_k -999
+
+Fe+2 - 2 H+ + Edta-4 + 2 H2O = Fe(OH)2(Edta)-4
+    log_k -999
+
+Fe+3 - 3 H+ + Edta-4 + 3 H2O = Fe(OH)3(Edta)-4
+    log_k -999
+
+2 Fe+3 - 2 H+ + 2 Edta-4 + 2 H2O = Fe2(OH)2(Edta)2-4
+    log_k -999
+
+Al+3 + Edta-4 = AlEdta-
+    log_k 16.30

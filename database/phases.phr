@@ -1,0 +1,44 @@
+PHASES
+
+# ── Aluminum hydroxide ────────────────────────────────────────────────────────
+Al(OH)3(am)
+    Al(OH)3 = Al+3 - 3H+ + 3H2O
+    log_k 6.5
+
+Al(OH)3_metastable
+    Al(OH)3 = Al+3 - 3H+ + 3H2O
+    log_k 3.5
+
+# ── Iron hydroxide ────────────────────────────────────────────────────────────
+Fe(OH)3(a)
+    Fe(OH)3 = Fe+3 - 3H+ + 3H2O
+    log_k 3.5
+
+Fe(OH)3(cr)
+    Fe(OH)3 = Fe+3 - 3H+ + 3H2O
+    log_k 1.22
+
+Fe(OH)3(s)
+    Fe(OH)3 = Fe+3 - 3H+ + 3H2O
+    log_k 2.78
+
+# ── Copper hydroxide ──────────────────────────────────────────────────────────
+Cu(OH)2(s)
+    Cu(OH)2 = Cu+2 - 2H+ + 2H2O
+    log_k 8.34
+
+# ── Cobalt hydroxide ──────────────────────────────────────────────────────────
+Co(OH)2(s)
+    Co(OH)2 = Co+2 - 2H+ + 2H2O
+    log_k 13.11
+
+# ── Nickel hydroxide ──────────────────────────────────────────────────────────
+Ni(OH)2(s)
+    Ni(OH)2 = Ni+2 - 2H+ + 2H2O
+    log_k 13.30
+    delta_h -84.389  # kJ/mol
+
+# ── Manganese hydroxide ───────────────────────────────────────────────────────
+Mn(OH)2(s)
+    Mn(OH)2 = Mn+2 - 2H+ + 2H2O
+    log_k 15.28

@@ -1,0 +1,40 @@
+# NMC532 leachate — open system (atmospheric O2, large reservoir)
+# O2(g) at log10(0.21 atm) = -0.678 with 10 mol reservoir → pe maintained at ~19-20
+
+leachate:
+  name: NMC532_open
+  temperature_C: 25.0
+  pH_initial: 7
+  water_kg: 1.0
+  units: mol/kgw
+  composition:
+    Al2_SO4_3:   0.005463
+    FeSO4_7H2O:  0.005179
+    CuSO4:       0.020901
+    CoSO4_7H2O:  0.075241
+    NiSO4_6H2O:  0.126536
+    MnSO4_H2O:   0.060261
+
+neutralization:
+  reagent: NaOH
+  stock_molarity_M: 3.0
+  naoh_dose_mol: 0.627
+  steps: 50
+
+o2_reservoir_mol: 10.0    # large reservoir = atmospheric O2 maintained throughout
+
+equilibrium_phases:
+  - O2(g)
+  - Al(OH)3(am)
+  - Fe(OH)3(a)
+  - Cu(OH)2(s)
+  - Co(OH)2(s)
+  - Ni(OH)2(s)
+  - Mn(OH)2(s)
+  - Manganite
+  - Hausmannite
+
+knobs:
+  iterations: 6000
+  convergence_tolerance: 1.0e-7
+  tolerance: 1.0e-11

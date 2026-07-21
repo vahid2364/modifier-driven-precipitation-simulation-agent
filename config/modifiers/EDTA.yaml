@@ -1,0 +1,12 @@
+modifier:
+  name: EDTA
+  formula: EDTA-4
+  element: Edta               # element name used in PHREEQC SOLUTION block
+  database: database/modifiers/EDTA.phr
+  dose_mol: 0.20          # mol/kgw — 200 uL × 1 M stock / 0.001 kg water (Na4EDTA tetrasodium salt)
+  dose_range: [0.01, 0.20]
+  added_with: leachate    # added before neutralization (pre-complexation)
+  notes: >
+    EDTA added to leachate before NaOH dosing.
+    Strong complexation of Cu2+ and Ni2+ expected to shift
+    effective precipitation onset pH upward.

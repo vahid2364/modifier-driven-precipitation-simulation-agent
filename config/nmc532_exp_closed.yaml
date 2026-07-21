@@ -1,0 +1,36 @@
+# NMC532 leachate — closed system (no O2, pe determined by Fe2+/Fe3+ couple)
+
+leachate:
+  name: NMC532_closed
+  temperature_C: 25.0
+  pH_initial: 7
+  water_kg: 1.0
+  units: mol/kgw
+  composition:
+    Al2_SO4_3:   0.005463
+    FeSO4_7H2O:  0.005179
+    CuSO4:       0.020901
+    CoSO4_7H2O:  0.075241
+    NiSO4_6H2O:  0.126536
+    MnSO4_H2O:   0.060261
+
+neutralization:
+  reagent: NaOH
+  stock_molarity_M: 3.0
+  naoh_dose_mol: 0.627
+  steps: 50
+
+equilibrium_phases:
+  - Al(OH)3(am)
+  - Fe(OH)3(a)
+  - Cu(OH)2(s)
+  - Co(OH)2(s)
+  - Ni(OH)2(s)
+  - Mn(OH)2(s)
+  - Manganite
+  - Hausmannite
+
+knobs:
+  iterations: 6000
+  convergence_tolerance: 1.0e-7
+  tolerance: 1.0e-11

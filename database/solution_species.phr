@@ -1,0 +1,25 @@
+SOLUTION_SPECIES
+
+# ── Sulfate ion pairs (M2+ + SO4-2 = MSO4) ───────────────────────────────────
+# log_k values from SIT/MINTEQ database
+
+Al+3 + SO4-2 = AlSO4+
+    log_k 3.20
+
+Fe+3 + SO4-2 = FeSO4+
+    log_k 4.00
+
+Fe+2 + SO4-2 = FeSO4
+    log_k 2.30
+
+Cu+2 + SO4-2 = CuSO4
+    log_k 2.36
+
+Ni+2 + SO4-2 = NiSO4
+    log_k 2.20
+
+Co+2 + SO4-2 = CoSO4
+    log_k 2.30
+
+Mn+2 + SO4-2 = MnSO4
+    log_k 2.00
