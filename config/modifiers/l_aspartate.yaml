@@ -1,0 +1,10 @@
+modifier:
+  database: database/modifiers/l_aspartate.phr
+  dose_mol: 0.2
+  formula: C4H7NO4
+  full_name: L-aspartic acid monosodium salt monohydrate
+  na_counter_ions: 0.2
+  name: l_aspartate
+  phreeqc_element: Asp
+  selected_molalities: Asp-2 CuAsp CuAsp2-2 CoAsp CoAsp2-2 NiAsp NiAsp2-2 MnAsp MnAsp2-2
+    AlAsp+1

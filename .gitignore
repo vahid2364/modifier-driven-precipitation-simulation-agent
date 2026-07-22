@@ -17,5 +17,14 @@ experiments/cu_edta_tune/*/phreeqc.log
 experiments/cu_edta_tune/*/input.phr
 experiments/cu_edta_tune/*/EDTA.phr
 
+# Beamer build artifacts
+presentations/*/build/
+*.aux
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
+
 # OS
 .DS_Store

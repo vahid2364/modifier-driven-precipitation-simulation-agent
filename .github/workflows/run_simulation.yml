@@ -1,0 +1,62 @@
+name: Run Modifier Simulation
+
+on:
+  workflow_dispatch:
+    inputs:
+      modifier_name:
+        description: "Full modifier name (e.g. 'L-aspartic acid monosodium salt monohydrate')"
+        required: true
+        type: string
+      config:
+        description: "Path to run config (default: config/run_config.yaml)"
+        required: false
+        default: "config/run_config.yaml"
+        type: string
+
+jobs:
+  simulate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install PHREEQC
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y phreeqc
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Update PHREEQC paths in run_config.yaml
+        run: |
+          PHREEQC_EXE=$(which phreeqc)
+          PHREEQC_DB=$(find /usr -name "sit.dat" 2>/dev/null | head -1)
+          sed -i "s|phreeqc_exe:.*|phreeqc_exe: $PHREEQC_EXE|" config/run_config.yaml
+          sed -i "s|database:.*|database: $PHREEQC_DB|" config/run_config.yaml
+          echo "PHREEQC: $PHREEQC_EXE"
+          echo "Database: $PHREEQC_DB"
+
+      - name: Run simulation agent
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python main.py \
+            --modifier "${{ github.event.inputs.modifier_name }}" \
+            --config "${{ github.event.inputs.config }}"
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: simulation-results
+          path: |
+            experiments/**/*_model_vs_exp.png
+            experiments/cu_edta_tune/cu_edta_sensitivity.png
+            config/run_config.yaml
+          retention-days: 30

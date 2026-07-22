@@ -1,0 +1,3901 @@
+leachate:
+  name: NMC532
+  metals:
+  - Al
+  - Fe
+  - Cu
+  - Co
+  - Ni
+  - Mn
+  naoh_max: 0.627
+  input_mol:
+    Al: 0.010926
+    Fe: 0.005179
+    Cu: 0.020901
+    Co: 0.075241
+    Ni: 0.126536
+    Mn: 0.060261
+  molar_mass:
+    Al: 26.982
+    Fe: 55.845
+    Cu: 63.546
+    Co: 58.933
+    Ni: 58.693
+    Mn: 54.938
+scenarios:
+  open: config/nmc532_exp_open.yaml
+  closed: config/nmc532_exp_closed.yaml
+  partial: config/nmc532_exp_partial.yaml
+experiment:
+  source: CC-NRCan-078
+  equiv:
+  - 0.0
+  - 0.3
+  - 0.7
+  - 1.0
+  mg_per_L:
+    Al:
+    - 294.8
+    - 0.0
+    - 82.6
+    - 111.0
+    Fe:
+    - 289.2
+    - 0.0
+    - 0.0
+    - 0.0
+    Cu:
+    - 1328.2
+    - 844.0
+    - 865.8
+    - 913.2
+    Co:
+    - 4434.2
+    - 3281.0
+    - 2993.0
+    - 2742.2
+    Ni:
+    - 7426.8
+    - 6008.4
+    - 6277.6
+    - 6332.2
+    Mn:
+    - 3310.6
+    - 1572.4
+    - 3.4
+    - 2.4
+analyst:
+  protection_threshold: 0.5
+  comparison_equiv:
+  - 0.3
+  - 1.0
+  target_metals:
+  - Cu
+  - Co
+  - Ni
+  - Mn
+  impurity_metals:
+  - Al
+  - Fe
+environment:
+  phreeqc_exe: /Users/vahid/.local/bin/phreeqc
+  database: /Users/vahid/.local/share/doc/phreeqc/database/sit.dat
+scout:
+  flag_discrepancy_threshold: 0.5
+  auto_correct: false
+runs:
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-21T21:40:09.056804'
+  status: scouted
+  descriptor:
+    denticity: 3
+    charge: -2
+    n_pka: 3
+    log_k_Al: 7.42
+    log_k_Fe: 8.23
+    log_k_Cu: 8.62
+    log_k_Co: 5.49
+    log_k_Ni: 6.87
+    log_k_Mn: 3.82
+  log_k_tuned:
+    Al: 7.42
+    Fe: 8.23
+    Cu: 8.62
+    Co: 5.49
+    Ni: 6.87
+    Mn: 3.82
+  scout_flags: []
+  scorecard: null
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-21T21:44:04.170294'
+  status: analysed
+  descriptor:
+    denticity: 3
+    charge: -2
+    n_pka: 3
+    log_k_Al: 7.42
+    log_k_Fe: 8.24
+    log_k_Cu: 8.62
+    log_k_Co: 5.63
+    log_k_Ni: 6.95
+    log_k_Mn: 3.58
+  log_k_tuned:
+    Al: 7.42
+    Fe: 8.24
+    Cu: 8.62
+    Co: 5.63
+    Ni: 6.95
+    Mn: 3.58
+  scout_flags: []
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 86.1
+      protected_0.3: true
+      pct_at_1.0_equiv: 9.0
+      protected_1.0: false
+      score: 1
+      max_score: 2
+    Fe:
+      pct_at_0.3_equiv: 100.0
+      protected_0.3: true
+      pct_at_1.0_equiv: 99.9
+      protected_1.0: true
+      score: 2
+      max_score: 2
+    Cu:
+      pct_at_0.3_equiv: 0.0
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.2
+      protected_1.0: false
+      score: 0
+      max_score: 2
+    Co:
+      pct_at_0.3_equiv: 56.5
+      protected_0.3: true
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 1
+      max_score: 2
+    Ni:
+      pct_at_0.3_equiv: 100.0
+      protected_0.3: true
+      pct_at_1.0_equiv: 99.9
+      protected_1.0: true
+      score: 2
+      max_score: 2
+    Mn:
+      pct_at_0.3_equiv: 0.0
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.1
+      protected_1.0: false
+      score: 0
+      max_score: 2
+  figure: experiments/l_aspartate_model_vs_exp.png
+  completed: '2026-07-21T21:44:05.269021'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T02:51:08.005173'
+  status: analysed
+  descriptor:
+    denticity: 3
+    charge: -2
+    n_pka: 3
+    log_k_Al: 7.86
+    log_k_Fe: 10.0
+    log_k_Cu: 8.62
+    log_k_Co: 5.63
+    log_k_Ni: 6.87
+    log_k_Mn: 3.61
+  log_k_tuned:
+    Al: 7.86
+    Fe: 10.0
+    Cu: 8.62
+    Co: 5.63
+    Ni: 6.87
+    Mn: 3.61
+  scout_flags:
+  - metal: Fe
+    literature: 10.0
+    tuned: 8.24
+    delta: 1.76
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 86.1
+      protected_0.3: true
+      pct_at_1.0_equiv: 9.0
+      protected_1.0: false
+      score: 1
+      max_score: 2
+    Fe:
+      pct_at_0.3_equiv: 100.0
+      protected_0.3: true
+      pct_at_1.0_equiv: 99.9
+      protected_1.0: true
+      score: 2
+      max_score: 2
+    Cu:
+      pct_at_0.3_equiv: 0.0
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.2
+      protected_1.0: false
+      score: 0
+      max_score: 2
+    Co:
+      pct_at_0.3_equiv: 56.5
+      protected_0.3: true
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 1
+      max_score: 2
+    Ni:
+      pct_at_0.3_equiv: 100.0
+      protected_0.3: true
+      pct_at_1.0_equiv: 99.9
+      protected_1.0: true
+      score: 2
+      max_score: 2
+    Mn:
+      pct_at_0.3_equiv: 0.0
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.1
+      protected_1.0: false
+      score: 0
+      max_score: 2
+  figure: experiments/l_aspartate_model_vs_exp.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T02:51:09.281970'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T02:54:20.606063'
+  status: analysed
+  descriptor:
+    denticity: 3
+    charge: -2
+    n_pka: 3
+    log_k_Al: 7.02
+    log_k_Fe: 8.48
+    log_k_Cu: 8.62
+    log_k_Co: 5.63
+    log_k_Ni: 6.87
+    log_k_Mn: 3.41
+  log_k_tuned:
+    Al: 7.02
+    Fe: 8.48
+    Cu: 8.62
+    Co: 5.63
+    Ni: 6.87
+    Mn: 3.41
+  scout_flags:
+  - metal: Al
+    literature: 7.02
+    tuned: 7.86
+    delta: 0.84
+    action: flagged
+  - metal: Fe
+    literature: 8.48
+    tuned: 10.0
+    delta: 1.52
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 86.1
+      protected_0.3: true
+      pct_at_1.0_equiv: 9.0
+      protected_1.0: false
+      score: 1
+      max_score: 2
+    Fe:
+      pct_at_0.3_equiv: 100.0
+      protected_0.3: true
+      pct_at_1.0_equiv: 99.9
+      protected_1.0: true
+      score: 2
+      max_score: 2
+    Cu:
+      pct_at_0.3_equiv: 0.0
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.2
+      protected_1.0: false
+      score: 0
+      max_score: 2
+    Co:
+      pct_at_0.3_equiv: 56.5
+      protected_0.3: true
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 1
+      max_score: 2
+    Ni:
+      pct_at_0.3_equiv: 100.0
+      protected_0.3: true
+      pct_at_1.0_equiv: 99.9
+      protected_1.0: true
+      score: 2
+      max_score: 2
+    Mn:
+      pct_at_0.3_equiv: 0.0
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.1
+      protected_1.0: false
+      score: 0
+      max_score: 2
+  figure: experiments/l_aspartate_model_vs_exp.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T02:54:21.803108'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T02:55:14.462672'
+  status: analysed
+  descriptor:
+    denticity: 3
+    charge: -2
+    n_pka: 3
+    log_k_Al: 7.8
+    log_k_Fe: 9.5
+    log_k_Cu: 8.62
+    log_k_Co: 5.63
+    log_k_Ni: 6.65
+    log_k_Mn: 3.3
+  log_k_tuned:
+    Al: 7.8
+    Fe: 9.5
+    Cu: 8.62
+    Co: 5.63
+    Ni: 6.65
+    Mn: 3.3
+  scout_flags:
+  - metal: Al
+    literature: 7.8
+    tuned: 7.02
+    delta: 0.78
+    action: flagged
+  - metal: Fe
+    literature: 9.5
+    tuned: 8.48
+    delta: 1.02
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 86.1
+      protected_0.3: true
+      pct_at_1.0_equiv: 9.0
+      protected_1.0: false
+      score: 1
+      max_score: 2
+    Fe:
+      pct_at_0.3_equiv: 100.0
+      protected_0.3: true
+      pct_at_1.0_equiv: 99.9
+      protected_1.0: true
+      score: 2
+      max_score: 2
+    Cu:
+      pct_at_0.3_equiv: 0.0
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.2
+      protected_1.0: false
+      score: 0
+      max_score: 2
+    Co:
+      pct_at_0.3_equiv: 56.5
+      protected_0.3: true
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 1
+      max_score: 2
+    Ni:
+      pct_at_0.3_equiv: 100.0
+      protected_0.3: true
+      pct_at_1.0_equiv: 99.9
+      protected_1.0: true
+      score: 2
+      max_score: 2
+    Mn:
+      pct_at_0.3_equiv: 0.0
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.1
+      protected_1.0: false
+      score: 0
+      max_score: 2
+  figure: experiments/l_aspartate_model_vs_exp.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T02:55:15.646085'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T02:56:06.672629'
+  status: analysed
+  descriptor:
+    denticity: 3
+    charge: -2
+    n_pka: 3
+    log_k_Al: 7.6
+    log_k_Fe: 9.4
+    log_k_Cu: 8.62
+    log_k_Co: 5.63
+    log_k_Ni: 6.87
+    log_k_Mn: 3.3
+  log_k_tuned:
+    Al: 7.6
+    Fe: 9.4
+    Cu: 8.62
+    Co: 5.63
+    Ni: 6.87
+    Mn: 3.3
+  scout_flags: []
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 86.1
+      protected_0.3: true
+      pct_at_1.0_equiv: 9.0
+      protected_1.0: false
+      score: 1
+      max_score: 2
+    Fe:
+      pct_at_0.3_equiv: 100.0
+      protected_0.3: true
+      pct_at_1.0_equiv: 99.9
+      protected_1.0: true
+      score: 2
+      max_score: 2
+    Cu:
+      pct_at_0.3_equiv: 0.0
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.2
+      protected_1.0: false
+      score: 0
+      max_score: 2
+    Co:
+      pct_at_0.3_equiv: 56.5
+      protected_0.3: true
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 1
+      max_score: 2
+    Ni:
+      pct_at_0.3_equiv: 100.0
+      protected_0.3: true
+      pct_at_1.0_equiv: 99.9
+      protected_1.0: true
+      score: 2
+      max_score: 2
+    Mn:
+      pct_at_0.3_equiv: 0.0
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.1
+      protected_1.0: false
+      score: 0
+      max_score: 2
+  figure: experiments/l_aspartate_model_vs_exp.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T02:56:07.866391'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T02:56:56.148671'
+  status: analysed
+  descriptor:
+    denticity: 3
+    charge: -2
+    n_pka: 3
+    log_k_Al: 7.59
+    log_k_Fe: 9.17
+    log_k_Cu: 8.62
+    log_k_Co: 5.63
+    log_k_Ni: 6.77
+    log_k_Mn: 3.37
+  log_k_tuned:
+    Al: 7.59
+    Fe: 9.17
+    Cu: 8.62
+    Co: 5.63
+    Ni: 6.77
+    Mn: 3.37
+  scout_flags: []
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 86.1
+      protected_0.3: true
+      pct_at_1.0_equiv: 9.0
+      protected_1.0: false
+      score: 1
+      max_score: 2
+    Fe:
+      pct_at_0.3_equiv: 100.0
+      protected_0.3: true
+      pct_at_1.0_equiv: 99.9
+      protected_1.0: true
+      score: 2
+      max_score: 2
+    Cu:
+      pct_at_0.3_equiv: 0.0
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.2
+      protected_1.0: false
+      score: 0
+      max_score: 2
+    Co:
+      pct_at_0.3_equiv: 56.5
+      protected_0.3: true
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 1
+      max_score: 2
+    Ni:
+      pct_at_0.3_equiv: 100.0
+      protected_0.3: true
+      pct_at_1.0_equiv: 99.9
+      protected_1.0: true
+      score: 2
+      max_score: 2
+    Mn:
+      pct_at_0.3_equiv: 0.0
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.1
+      protected_1.0: false
+      score: 0
+      max_score: 2
+  figure: experiments/l_aspartate_model_vs_exp.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T02:56:57.381026'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T03:15:54.211276'
+  status: analysed
+  descriptor:
+    denticity: 3
+    charge: -2
+    n_pka: 3
+    log_k_Al: 7.88
+    log_k_Fe: 9.49
+    log_k_Cu: 8.62
+    log_k_Co: 5.63
+    log_k_Ni: 6.87
+    log_k_Mn: 3.31
+  log_k_tuned:
+    Al: 7.88
+    Fe: 9.49
+    Cu: 8.62
+    Co: 5.63
+    Ni: 6.87
+    Mn: 3.31
+  scout_flags: []
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 0.0
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.8
+      protected_1.0: false
+      score: 0
+      max_score: 2
+    Fe:
+      pct_at_0.3_equiv: 0.0
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      max_score: 2
+    Cu:
+      pct_at_0.3_equiv: 41.6
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      max_score: 2
+    Co:
+      pct_at_0.3_equiv: 100.0
+      protected_0.3: true
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 1
+      max_score: 2
+    Ni:
+      pct_at_0.3_equiv: 99.9
+      protected_0.3: true
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 1
+      max_score: 2
+    Mn:
+      pct_at_0.3_equiv: 0.0
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      max_score: 2
+  figure: experiments/l_aspartate_model_vs_exp.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T03:15:55.354765'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T03:21:07.761769'
+  status: analysed
+  descriptor:
+    denticity: 3
+    charge: -2
+    n_pka: 3
+    log_k_Al: 7.8
+    log_k_Fe: 8.9
+    log_k_Cu: 8.62
+    log_k_Co: 5.63
+    log_k_Ni: 6.69
+    log_k_Mn: 3.8
+  log_k_tuned:
+    Al: 7.8
+    Fe: 8.9
+    Cu: 8.62
+    Co: 5.63
+    Ni: 6.69
+    Mn: 3.8
+  scout_flags:
+  - metal: Fe
+    literature: 8.9
+    tuned: 9.49
+    delta: 0.59
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 0.0
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.8
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+    Fe:
+      pct_at_0.3_equiv: 0.0
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+    Cu:
+      pct_at_0.3_equiv: 41.6
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+    Co:
+      pct_at_0.3_equiv: 100.0
+      protected_0.3: true
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+    Ni:
+      pct_at_0.3_equiv: 99.9
+      protected_0.3: true
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+    Mn:
+      pct_at_0.3_equiv: 0.0
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+  figure: experiments/l_aspartate_model_vs_exp.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T03:21:08.876743'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T03:31:15.601704'
+  status: analysed
+  descriptor:
+    denticity: 3
+    charge: -2
+    n_pka: 3
+    log_k_Al: 8.23
+    log_k_Fe: 10.0
+    log_k_Cu: 8.62
+    log_k_Co: 5.52
+    log_k_Ni: 6.87
+    log_k_Mn: 3.8
+  log_k_tuned:
+    Al: 8.23
+    Fe: 10.0
+    Cu: 8.62
+    Co: 5.52
+    Ni: 6.87
+    Mn: 3.8
+  scout_flags:
+  - metal: Fe
+    literature: 10.0
+    tuned: 8.9
+    delta: 1.1
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 0.0
+      removed_0.3: true
+      pct_at_1.0_equiv: 13.1
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+    Fe:
+      pct_at_0.3_equiv: 0.0
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.1
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+    Cu:
+      pct_at_0.3_equiv: 41.6
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+    Co:
+      pct_at_0.3_equiv: 100.0
+      protected_0.3: true
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+    Ni:
+      pct_at_0.3_equiv: 99.9
+      protected_0.3: true
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+    Mn:
+      pct_at_0.3_equiv: 0.0
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+  figure: experiments/l_aspartate_model_vs_exp.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T03:31:17.391654'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T03:38:52.178114'
+  status: analysed
+  descriptor:
+    denticity: 3
+    charge: -2
+    n_pka: 3
+    log_k_Al: 7.44
+    log_k_Fe: 8.48
+    log_k_Cu: 8.62
+    log_k_Co: 5.63
+    log_k_Ni: 6.72
+    log_k_Mn: 3.8
+  log_k_tuned:
+    Al: 7.44
+    Fe: 8.48
+    Cu: 8.62
+    Co: 5.63
+    Ni: 6.72
+    Mn: 3.8
+  scout_flags:
+  - metal: Al
+    literature: 7.44
+    tuned: 8.23
+    delta: 0.79
+    action: flagged
+  - metal: Fe
+    literature: 8.48
+    tuned: 10.0
+    delta: 1.52
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 0.0
+      removed_0.3: true
+      pct_at_1.0_equiv: 30.8
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+    Fe:
+      pct_at_0.3_equiv: 0.0
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.2
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+    Cu:
+      pct_at_0.3_equiv: 42.3
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.9
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+    Co:
+      pct_at_0.3_equiv: 99.9
+      protected_0.3: true
+      pct_at_1.0_equiv: 0.2
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+    Ni:
+      pct_at_0.3_equiv: 99.9
+      protected_0.3: true
+      pct_at_1.0_equiv: 9.4
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+    Mn:
+      pct_at_0.3_equiv: 0.0
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+  figure: experiments/l_aspartate_model_vs_exp.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T03:38:53.379202'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T03:48:42.345872'
+  status: analysed
+  descriptor:
+    denticity: 3
+    charge: -2
+    n_pka: 3
+    log_k_Al: 7.52
+    log_k_Fe: 8.32
+    log_k_Cu: 8.62
+    log_k_Co: 5.52
+    log_k_Ni: 6.58
+    log_k_Mn: 3.82
+  log_k_tuned:
+    Al: 7.52
+    Fe: 8.32
+    Cu: 8.62
+    Co: 5.52
+    Ni: 6.58
+    Mn: 3.82
+  scout_flags: []
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 0.0
+      removed_0.3: true
+      pct_at_1.0_equiv: 21.5
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+    Fe:
+      pct_at_0.3_equiv: 0.0
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.1
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+    Cu:
+      pct_at_0.3_equiv: 100.0
+      protected_0.3: true
+      pct_at_1.0_equiv: 2.6
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+    Co:
+      pct_at_0.3_equiv: 84.0
+      protected_0.3: true
+      pct_at_1.0_equiv: 0.1
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+    Ni:
+      pct_at_0.3_equiv: 99.9
+      protected_0.3: true
+      pct_at_1.0_equiv: 4.1
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+    Mn:
+      pct_at_0.3_equiv: 0.0
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+  figure: experiments/l_aspartate_model_vs_exp.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T03:48:43.537180'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T03:56:27.657057'
+  status: scouted
+  descriptor:
+    denticity: 3
+    charge: -1
+    n_pka: 3
+    log_k_Al: 7.0
+    log_k_Fe: 7.5
+    log_k_Cu: 8.62
+    log_k_Co: 5.49
+    log_k_Ni: 5.9
+    log_k_Mn: 3.17
+    log_k2_Al: null
+    log_k2_Fe: null
+    log_k2_Cu: 15.1
+    log_k2_Co: 9.28
+    log_k2_Ni: 10.72
+    log_k2_Mn: 5.35
+  log_k_tuned:
+    Al: 7.0
+    Fe: 7.5
+    Cu: 8.62
+    Co: 5.49
+    Ni: 5.9
+    Mn: 3.17
+  scout_flags:
+  - metal: Al
+    literature: 7.0
+    tuned: 7.52
+    delta: 0.52
+    action: flagged
+  - metal: Fe
+    literature: 7.5
+    tuned: 8.32
+    delta: 0.82
+    action: flagged
+  - metal: Ni
+    literature: 5.9
+    tuned: 6.58
+    delta: 0.68
+    action: flagged
+  - metal: Mn
+    literature: 3.17
+    tuned: 3.82
+    delta: 0.65
+    action: flagged
+  scorecard: null
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T04:02:46.988518'
+  status: analysed
+  descriptor:
+    denticity: 3
+    charge: -2
+    n_pka: 3
+    log_k_Al: 7.0
+    log_k_Fe: 7.51
+    log_k_Cu: 8.62
+    log_k_Co: 5.49
+    log_k_Ni: 6.03
+    log_k_Mn: 3.17
+    log_k2_Al: null
+    log_k2_Fe: 12.6
+    log_k2_Cu: 15.1
+    log_k2_Co: 9.28
+    log_k2_Ni: 10.6
+    log_k2_Mn: 5.67
+  log_k_tuned:
+    Al: 7.0
+    Fe: 7.51
+    Cu: 8.62
+    Co: 5.49
+    Ni: 6.03
+    Mn: 3.17
+  scout_flags: []
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 99.8
+      removed_0.3: false
+      pct_at_1.0_equiv: 0.3
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 55.11
+    Fe:
+      pct_at_0.3_equiv: 0.8
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 48.9
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 99.6
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 29.38
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 2.8
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 33.34
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 53.7
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 19.9
+    Mn:
+      pct_at_0.3_equiv: 8.3
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 43.99
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T04:02:48.411331'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T04:05:16.034919'
+  status: analysed
+  descriptor: {}
+  log_k_tuned:
+    Al: 7.64
+    Fe: 7.52
+    Cu: 8.62
+    Co: 5.49
+    Ni: 6.58
+    Mn: 3.59
+  scout_flags:
+  - metal: Al
+    literature: 7.64
+    tuned: 7.0
+    delta: 0.64
+    action: flagged
+  - metal: Ni
+    literature: 6.58
+    tuned: 6.03
+    delta: 0.55
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 99.8
+      removed_0.3: false
+      pct_at_1.0_equiv: 0.3
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 55.11
+    Fe:
+      pct_at_0.3_equiv: 0.8
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 48.9
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 99.6
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 29.38
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 2.8
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 33.34
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 53.7
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 19.9
+    Mn:
+      pct_at_0.3_equiv: 8.3
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 43.99
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T04:05:17.500165'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T04:06:06.178734'
+  status: analysed
+  descriptor: {}
+  log_k_tuned:
+    Al: 7.64
+    Fe: 8.84
+    Cu: 8.62
+    Co: 5.52
+    Ni: 5.76
+    Mn: 3.83
+  scout_flags:
+  - metal: Fe
+    literature: 8.84
+    tuned: 7.52
+    delta: 1.32
+    action: flagged
+  - metal: Ni
+    literature: 5.76
+    tuned: 6.58
+    delta: 0.82
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 99.8
+      removed_0.3: false
+      pct_at_1.0_equiv: 1.5
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 54.9
+    Fe:
+      pct_at_0.3_equiv: 2.5
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 46.29
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 3.3
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 44.21
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 0.6
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 33.31
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 71.5
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 13.9
+    Mn:
+      pct_at_0.3_equiv: 23.9
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 25.09
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T04:06:07.553659'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T04:07:38.870142'
+  status: analysed
+  descriptor:
+    denticity: 3
+    charge: -2
+    n_pka: 3
+    log_k_Al: 7.61
+    log_k_Fe: 10.0
+    log_k_Cu: 8.62
+    log_k_Co: 5.49
+    log_k_Ni: 6.13
+    log_k_Mn: 3.42
+    log_k2_Al: null
+    log_k2_Fe: null
+    log_k2_Cu: 15.1
+    log_k2_Co: 9.46
+    log_k2_Ni: 10.72
+    log_k2_Mn: 5.63
+  log_k_tuned:
+    Al: 7.61
+    Fe: 10.0
+    Cu: 8.62
+    Co: 5.49
+    Ni: 6.13
+    Mn: 3.42
+  scout_flags:
+  - metal: Fe
+    literature: 10.0
+    tuned: 8.84
+    delta: 1.16
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 99.8
+      removed_0.3: false
+      pct_at_1.0_equiv: 0.3
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 55.11
+    Fe:
+      pct_at_0.3_equiv: 0.9
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 48.74
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 87.9
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 26.78
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 3.3
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 33.12
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 55.3
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 19.25
+    Mn:
+      pct_at_0.3_equiv: 9.2
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 42.67
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T04:07:40.326278'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T04:14:47.973861'
+  status: analysed
+  descriptor:
+    denticity: 3
+    charge: -2
+    n_pka: 3
+    log_k_Al: 7.92
+    log_k_Fe: 7.52
+    log_k_Cu: 8.62
+    log_k_Co: 5.49
+    log_k_Ni: 6.52
+    log_k_Mn: 3.82
+    log_k2_Al: null
+    log_k2_Fe: 12.6
+    log_k2_Cu: 15.1
+    log_k2_Co: 9.28
+    log_k2_Ni: 11.14
+    log_k2_Mn: 6.14
+  log_k_tuned:
+    Al: 7.92
+    Fe: 7.52
+    Cu: 8.62
+    Co: 5.49
+    Ni: 6.52
+    Mn: 3.82
+  scout_flags:
+  - metal: Fe
+    literature: 7.52
+    tuned: 10.0
+    delta: 2.48
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 99.8
+      removed_0.3: false
+      pct_at_1.0_equiv: 0.4
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 55.08
+    Fe:
+      pct_at_0.3_equiv: 1.2
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 48.17
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 39.2
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 26.87
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 1.0
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 33.92
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 64.8
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 15.83
+    Mn:
+      pct_at_0.3_equiv: 12.1
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 38.41
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T04:14:49.396296'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T04:36:41.287663'
+  status: analysed
+  descriptor:
+    denticity: 3
+    charge: -2
+    n_pka: 3
+    log_k_Al: 7.64
+    log_k_Fe: 7.52
+    log_k_Cu: 8.62
+    log_k_Co: 5.52
+    log_k_Ni: 6.23
+    log_k_Mn: 3.87
+    log_k2_Al: null
+    log_k2_Fe: 12.6
+    log_k2_Cu: 15.1
+    log_k2_Co: 9.68
+    log_k2_Ni: 11.06
+    log_k2_Mn: 6.44
+  log_k_tuned:
+    Al: 7.64
+    Fe: 7.52
+    Cu: 8.62
+    Co: 5.52
+    Ni: 6.23
+    Mn: 3.87
+  scout_flags: []
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 99.8
+      removed_0.3: false
+      pct_at_1.0_equiv: 0.4
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 55.08
+    Fe:
+      pct_at_0.3_equiv: 1.1
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 48.43
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 45.6
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 24.63
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 2.8
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 32.99
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 62.7
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 16.55
+    Mn:
+      pct_at_0.3_equiv: 11.4
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 40.07
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T04:36:42.706793'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T04:38:49.307123'
+  status: analysed
+  descriptor:
+    denticity: 3
+    charge: -2
+    n_pka: 3
+    log_k_Al: 7.64
+    log_k_Fe: 10.0
+    log_k_Cu: 8.62
+    log_k_Co: 5.51
+    log_k_Ni: 6.08
+    log_k_Mn: 3.52
+    log_k2_Al: 13.47
+    log_k2_Fe: 16.8
+    log_k2_Cu: 15.26
+    log_k2_Co: 9.79
+    log_k2_Ni: 10.96
+    log_k2_Mn: 5.88
+  log_k_tuned:
+    Al: 7.64
+    Fe: 10.0
+    Cu: 8.62
+    Co: 5.51
+    Ni: 6.08
+    Mn: 3.52
+  scout_flags:
+  - metal: Fe
+    literature: 10.0
+    tuned: 7.52
+    delta: 2.48
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 99.8
+      removed_0.3: false
+      pct_at_1.0_equiv: 0.4
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 55.09
+    Fe:
+      pct_at_0.3_equiv: 1.1
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 48.47
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 76.0
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 25.26
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 4.2
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 32.7
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 56.9
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 18.65
+    Mn:
+      pct_at_0.3_equiv: 11.2
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 40.29
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T04:38:50.768015'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T04:46:00.502186'
+  status: analysed
+  descriptor:
+    denticity: 3
+    charge: -2
+    n_pka: 3
+    log_k_Al: 7.0
+    log_k_Fe: 10.0
+    log_k_Cu: 8.62
+    log_k_Co: 5.49
+    log_k_Ni: 6.16
+    log_k_Mn: 3.21
+    log_k2_Al: null
+    log_k2_Fe: null
+    log_k2_Cu: 15.1
+    log_k2_Co: 9.26
+    log_k2_Ni: 10.72
+    log_k2_Mn: 5.42
+  log_k_tuned:
+    Al: 7.0
+    Fe: 10.0
+    Cu: 8.62
+    Co: 5.49
+    Ni: 6.16
+    Mn: 3.21
+  scout_flags:
+  - metal: Al
+    literature: 7.0
+    tuned: 7.64
+    delta: 0.64
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 99.8
+      removed_0.3: false
+      pct_at_1.0_equiv: 0.3
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 55.11
+    Fe:
+      pct_at_0.3_equiv: 0.8
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 48.78
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 88.8
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 26.94
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 2.1
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 33.66
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 55.9
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 19.03
+    Mn:
+      pct_at_0.3_equiv: 8.9
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 43.02
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T04:46:01.905791'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T04:47:07.466222'
+  status: analysed
+  descriptor:
+    denticity: 3
+    charge: -2
+    n_pka: 3
+    log_k_Al: 7.62
+    log_k_Fe: 10.0
+    log_k_Cu: 8.62
+    log_k_Co: 5.49
+    log_k_Ni: 6.22
+    log_k_Mn: 3.83
+    log_k2_Al: 13.15
+    log_k2_Fe: 16.8
+    log_k2_Cu: 15.1
+    log_k2_Co: 9.45
+    log_k2_Ni: 10.92
+    log_k2_Mn: 6.44
+  log_k_tuned:
+    Al: 7.62
+    Fe: 10.0
+    Cu: 8.62
+    Co: 5.49
+    Ni: 6.22
+    Mn: 3.83
+  scout_flags:
+  - metal: Al
+    literature: 7.62
+    tuned: 7.0
+    delta: 0.62
+    action: flagged
+  - metal: Mn
+    literature: 3.83
+    tuned: 3.21
+    delta: 0.62
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 99.8
+      removed_0.3: false
+      pct_at_1.0_equiv: 0.4
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 55.09
+    Fe:
+      pct_at_0.3_equiv: 1.0
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 48.5
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 64.9
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 25.08
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 2.2
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 33.52
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 60.2
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 17.43
+    Mn:
+      pct_at_0.3_equiv: 10.7
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 40.66
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T04:47:08.885193'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T04:49:47.819916'
+  status: analysed
+  descriptor:
+    denticity: 3
+    charge: -2
+    n_pka: 3
+    log_k_Al: 7.64
+    log_k_Fe: 10.0
+    log_k_Cu: 8.62
+    log_k_Co: 5.49
+    log_k_Ni: 5.88
+    log_k_Mn: 3.83
+    log_k2_Al: null
+    log_k2_Fe: 16.8
+    log_k2_Cu: 15.1
+    log_k2_Co: 9.27
+    log_k2_Ni: 10.6
+    log_k2_Mn: 6.14
+  log_k_tuned:
+    Al: 7.64
+    Fe: 10.0
+    Cu: 8.62
+    Co: 5.49
+    Ni: 5.88
+    Mn: 3.83
+  scout_flags: []
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 99.8
+      removed_0.3: false
+      pct_at_1.0_equiv: 0.3
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 55.11
+    Fe:
+      pct_at_0.3_equiv: 0.8
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 48.9
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 99.6
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 29.38
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 2.8
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 33.35
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 53.7
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 19.88
+    Mn:
+      pct_at_0.3_equiv: 8.4
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 43.95
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T04:49:49.257627'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T04:51:39.652985'
+  status: analysed
+  descriptor:
+    denticity: 3
+    charge: -2
+    n_pka: 3
+    log_k_Al: 7.64
+    log_k_Fe: 8.23
+    log_k_Cu: 8.62
+    log_k_Co: 5.49
+    log_k_Ni: 6.17
+    log_k_Mn: 3.48
+    log_k2_Al: null
+    log_k2_Fe: 13.52
+    log_k2_Cu: 15.02
+    log_k2_Co: 9.26
+    log_k2_Ni: 10.68
+    log_k2_Mn: 5.88
+  log_k_tuned:
+    Al: 7.64
+    Fe: 8.23
+    Cu: 8.62
+    Co: 5.49
+    Ni: 6.17
+    Mn: 3.48
+  scout_flags:
+  - metal: Fe
+    literature: 8.23
+    tuned: 10.0
+    delta: 1.77
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 99.8
+      removed_0.3: false
+      pct_at_1.0_equiv: 0.3
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 55.11
+    Fe:
+      pct_at_0.3_equiv: 0.8
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 48.76
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 82.3
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 25.91
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 2.4
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 33.55
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 56.8
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 18.68
+    Mn:
+      pct_at_0.3_equiv: 8.9
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 42.85
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T04:51:41.057269'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T04:53:36.634872'
+  status: analysed
+  descriptor: {}
+  log_k_tuned:
+    Al: 7.26
+    Fe: 7.4
+    Cu: 8.62
+    Co: 5.49
+    Ni: 5.67
+    Mn: 3.6
+  scout_flags:
+  - metal: Fe
+    literature: 7.4
+    tuned: 8.23
+    delta: 0.83
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 99.8
+      removed_0.3: false
+      pct_at_1.0_equiv: 0.4
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 55.08
+    Fe:
+      pct_at_0.3_equiv: 1.2
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 48.17
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 39.2
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 26.87
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 1.0
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 33.92
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 64.8
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 15.83
+    Mn:
+      pct_at_0.3_equiv: 12.1
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 38.41
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T04:53:38.002571'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T04:58:26.955765'
+  status: analysed
+  descriptor: {}
+  log_k_tuned:
+    Al: 7.54
+    Fe: 9.22
+    Cu: 8.62
+    Co: 5.49
+    Ni: 5.96
+    Mn: 3.67
+  scout_flags:
+  - metal: Fe
+    literature: 9.22
+    tuned: 7.4
+    delta: 1.82
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 99.8
+      removed_0.3: false
+      pct_at_1.0_equiv: 0.4
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 55.08
+    Fe:
+      pct_at_0.3_equiv: 1.2
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 48.15
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 39.2
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 26.87
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 1.0
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 33.92
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 64.8
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 15.83
+    Mn:
+      pct_at_0.3_equiv: 12.1
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 38.41
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T04:58:28.389434'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T05:02:03.670223'
+  status: analysed
+  descriptor: {}
+  log_k_tuned:
+    Al: 7.64
+    Fe: 10.0
+    Cu: 8.62
+    Co: 6.1
+    Ni: 6.87
+    Mn: 3.82
+  scout_flags:
+  - metal: Fe
+    literature: 10.0
+    tuned: 9.22
+    delta: 0.78
+    action: flagged
+  - metal: Co
+    literature: 6.1
+    tuned: 5.49
+    delta: 0.61
+    action: flagged
+  - metal: Ni
+    literature: 6.87
+    tuned: 5.96
+    delta: 0.91
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 99.8
+      removed_0.3: false
+      pct_at_1.0_equiv: 0.4
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 55.08
+    Fe:
+      pct_at_0.3_equiv: 1.1
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 48.3
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 39.2
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 26.87
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 1.0
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 33.92
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 64.8
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 15.83
+    Mn:
+      pct_at_0.3_equiv: 11.5
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 39.29
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T05:02:05.051116'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T05:04:36.646120'
+  status: analysed
+  descriptor: {}
+  log_k_tuned:
+    Al: 7.67
+    Fe: 10.0
+    Cu: 8.62
+    Co: 5.49
+    Ni: 6.04
+    Mn: 3.83
+  scout_flags:
+  - metal: Co
+    literature: 5.49
+    tuned: 6.1
+    delta: 0.61
+    action: flagged
+  - metal: Ni
+    literature: 6.04
+    tuned: 6.87
+    delta: 0.83
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 99.8
+      removed_0.3: false
+      pct_at_1.0_equiv: 1.1
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 54.97
+    Fe:
+      pct_at_0.3_equiv: 2.0
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 47.14
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 5.9
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 40.11
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 0.2
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 33.45
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 71.2
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 13.99
+    Mn:
+      pct_at_0.3_equiv: 19.3
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 30.52
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T05:04:38.021054'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T05:06:11.808972'
+  status: analysed
+  descriptor: {}
+  log_k_tuned:
+    Al: 7.64
+    Fe: 8.84
+    Cu: 8.62
+    Co: 5.52
+    Ni: 5.96
+    Mn: 3.83
+  scout_flags:
+  - metal: Fe
+    literature: 8.84
+    tuned: 10.0
+    delta: 1.16
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 99.8
+      removed_0.3: false
+      pct_at_1.0_equiv: 1.1
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 54.97
+    Fe:
+      pct_at_0.3_equiv: 2.0
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 47.14
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 5.9
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 40.11
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 0.2
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 33.45
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 71.2
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 13.99
+    Mn:
+      pct_at_0.3_equiv: 19.3
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 30.53
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T05:06:13.228816'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T05:07:53.092534'
+  status: analysed
+  descriptor: {}
+  log_k_tuned:
+    Al: 7.64
+    Fe: 10.0
+    Cu: 8.62
+    Co: 5.84
+    Ni: 6.52
+    Mn: 4.11
+  scout_flags:
+  - metal: Fe
+    literature: 10.0
+    tuned: 8.84
+    delta: 1.16
+    action: flagged
+  - metal: Ni
+    literature: 6.52
+    tuned: 5.96
+    delta: 0.56
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 99.8
+      removed_0.3: false
+      pct_at_1.0_equiv: 1.1
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 54.97
+    Fe:
+      pct_at_0.3_equiv: 2.0
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 47.14
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 5.9
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 40.11
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 0.2
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 33.45
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 71.2
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 13.99
+    Mn:
+      pct_at_0.3_equiv: 19.3
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 30.53
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T05:07:54.497694'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T05:08:28.734434'
+  status: analysed
+  descriptor: {}
+  log_k_tuned:
+    Al: 7.1
+    Fe: 7.52
+    Cu: 8.62
+    Co: 5.49
+    Ni: 6.22
+    Mn: 3.17
+  scout_flags:
+  - metal: Al
+    literature: 7.1
+    tuned: 7.64
+    delta: 0.54
+    action: flagged
+  - metal: Fe
+    literature: 7.52
+    tuned: 10.0
+    delta: 2.48
+    action: flagged
+  - metal: Mn
+    literature: 3.17
+    tuned: 4.11
+    delta: 0.94
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 99.8
+      removed_0.3: false
+      pct_at_1.0_equiv: 1.1
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 54.96
+    Fe:
+      pct_at_0.3_equiv: 2.0
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 47.14
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 5.4
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 43.89
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 21.5
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 26.88
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 65.0
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 15.79
+    Mn:
+      pct_at_0.3_equiv: 19.3
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 30.52
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T05:08:30.136120'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T05:11:15.120200'
+  status: analysed
+  descriptor: {}
+  log_k_tuned:
+    Al: 7.78
+    Fe: 7.52
+    Cu: 8.62
+    Co: 5.49
+    Ni: 6.16
+    Mn: 3.48
+  scout_flags:
+  - metal: Al
+    literature: 7.78
+    tuned: 7.1
+    delta: 0.68
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 99.8
+      removed_0.3: false
+      pct_at_1.0_equiv: 2.2
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 54.78
+    Fe:
+      pct_at_0.3_equiv: 2.8
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 45.98
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 1.1
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 39.41
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 99.6
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 27.93
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 43.1
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 24.31
+    Mn:
+      pct_at_0.3_equiv: 26.3
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 22.76
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T05:11:16.505975'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T05:12:26.994765'
+  status: analysed
+  descriptor: {}
+  log_k_tuned:
+    Al: 7.62
+    Fe: 7.52
+    Cu: 8.62
+    Co: 5.49
+    Ni: 5.96
+    Mn: 3.2
+  scout_flags: []
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 99.8
+      removed_0.3: false
+      pct_at_1.0_equiv: 0.6
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 55.05
+    Fe:
+      pct_at_0.3_equiv: 1.4
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 47.92
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 18.1
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 31.18
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 0.6
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 33.42
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 68.7
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 14.66
+    Mn:
+      pct_at_0.3_equiv: 14.2
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 36.27
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T05:12:28.399883'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T05:13:37.963747'
+  status: analysed
+  descriptor: {}
+  log_k_tuned:
+    Al: 7.54
+    Fe: 10.0
+    Cu: 8.62
+    Co: 5.49
+    Ni: 5.96
+    Mn: 3.83
+  scout_flags:
+  - metal: Fe
+    literature: 10.0
+    tuned: 7.52
+    delta: 2.48
+    action: flagged
+  - metal: Mn
+    literature: 3.83
+    tuned: 3.2
+    delta: 0.63
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 72.6
+      removed_0.3: false
+      pct_at_1.0_equiv: 0.2
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 43.18
+    Fe:
+      pct_at_0.3_equiv: 0.8
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 48.69
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 99.6
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 29.38
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 3.5
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 33.08
+    Ni:
+      pct_at_0.3_equiv: 99.9
+      protected_0.3: true
+      pct_at_1.0_equiv: 53.2
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 20.07
+    Mn:
+      pct_at_0.3_equiv: 8.8
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 42.59
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T05:13:39.322261'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T05:15:08.399660'
+  status: analysed
+  descriptor: {}
+  log_k_tuned:
+    Al: 7.62
+    Fe: 7.52
+    Cu: 8.62
+    Co: 5.52
+    Ni: 5.96
+    Mn: 3.77
+  scout_flags:
+  - metal: Fe
+    literature: 7.52
+    tuned: 10.0
+    delta: 2.48
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 97.9
+      removed_0.3: false
+      pct_at_1.0_equiv: 0.4
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 54.22
+    Fe:
+      pct_at_0.3_equiv: 1.0
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 48.41
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 52.1
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 26.35
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 1.3
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 34.03
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 62.5
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 16.62
+    Mn:
+      pct_at_0.3_equiv: 10.7
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 40.24
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T05:15:09.788534'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T05:17:20.880699'
+  status: analysed
+  descriptor: {}
+  log_k_tuned:
+    Al: 7.02
+    Fe: 7.52
+    Cu: 8.62
+    Co: 5.49
+    Ni: 6.04
+    Mn: 3.67
+  scout_flags:
+  - metal: Al
+    literature: 7.02
+    tuned: 7.62
+    delta: 0.6
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 97.4
+      removed_0.3: false
+      pct_at_1.0_equiv: 0.4
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 54.02
+    Fe:
+      pct_at_0.3_equiv: 1.0
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 48.43
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 14.4
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 33.7
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 1.5
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 32.88
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 68.6
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 14.68
+    Mn:
+      pct_at_0.3_equiv: 10.6
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 40.39
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T05:17:22.301679'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T05:18:40.396309'
+  status: analysed
+  descriptor: {}
+  log_k_tuned:
+    Al: 7.0
+    Fe: 7.51
+    Cu: 8.62
+    Co: 5.49
+    Ni: 6.23
+    Mn: 3.17
+  scout_flags: []
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 96.9
+      removed_0.3: false
+      pct_at_1.0_equiv: 0.4
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 53.78
+    Fe:
+      pct_at_0.3_equiv: 1.0
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 48.45
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 7.3
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 39.78
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 1.5
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 32.84
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 69.8
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 14.36
+    Mn:
+      pct_at_0.3_equiv: 10.6
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 40.55
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T05:18:41.825719'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T05:19:31.488756'
+  status: analysed
+  descriptor: {}
+  log_k_tuned:
+    Al: 7.53
+    Fe: 7.46
+    Cu: 8.62
+    Co: 5.72
+    Ni: 6.53
+    Mn: 3.83
+  scout_flags:
+  - metal: Al
+    literature: 7.53
+    tuned: 7.0
+    delta: 0.53
+    action: flagged
+  - metal: Mn
+    literature: 3.83
+    tuned: 3.17
+    delta: 0.66
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 96.3
+      removed_0.3: false
+      pct_at_1.0_equiv: 0.4
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 53.52
+    Fe:
+      pct_at_0.3_equiv: 1.0
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 48.47
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 4.6
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 42.97
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 1.7
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 32.81
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 70.1
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 14.26
+    Mn:
+      pct_at_0.3_equiv: 10.6
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 40.71
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T05:19:32.923899'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T05:20:18.604490'
+  status: analysed
+  descriptor: {}
+  log_k_tuned:
+    Al: 8.2
+    Fe: 8.9
+    Cu: 8.62
+    Co: 5.49
+    Ni: 6.17
+    Mn: 3.83
+  scout_flags:
+  - metal: Al
+    literature: 8.2
+    tuned: 7.53
+    delta: 0.67
+    action: flagged
+  - metal: Fe
+    literature: 8.9
+    tuned: 7.46
+    delta: 1.44
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 96.3
+      removed_0.3: false
+      pct_at_1.0_equiv: 0.4
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 53.52
+    Fe:
+      pct_at_0.3_equiv: 1.0
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 48.47
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 4.7
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 42.94
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 1.5
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 32.9
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 70.2
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 14.25
+    Mn:
+      pct_at_0.3_equiv: 10.6
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 40.71
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T05:20:20.034154'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T05:20:51.592651'
+  status: analysed
+  descriptor: {}
+  log_k_tuned:
+    Al: 7.53
+    Fe: 7.52
+    Cu: 8.62
+    Co: 5.49
+    Ni: 6.27
+    Mn: 3.77
+  scout_flags:
+  - metal: Al
+    literature: 7.53
+    tuned: 8.2
+    delta: 0.67
+    action: flagged
+  - metal: Fe
+    literature: 7.52
+    tuned: 8.9
+    delta: 1.38
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 96.3
+      removed_0.3: false
+      pct_at_1.0_equiv: 0.4
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 53.52
+    Fe:
+      pct_at_0.3_equiv: 1.0
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 48.47
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 4.7
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 42.94
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 1.5
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 32.9
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 70.2
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 14.25
+    Mn:
+      pct_at_0.3_equiv: 10.6
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 40.71
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T05:20:52.976099'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T05:22:20.131275'
+  status: analysed
+  descriptor: {}
+  log_k_tuned:
+    Al: 7.76
+    Fe: 10.0
+    Cu: 8.62
+    Co: 5.49
+    Ni: 6.16
+    Mn: 3.62
+  scout_flags:
+  - metal: Fe
+    literature: 10.0
+    tuned: 7.52
+    delta: 2.48
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 99.8
+      removed_0.3: false
+      pct_at_1.0_equiv: 0.4
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 55.09
+    Fe:
+      pct_at_0.3_equiv: 1.2
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 48.33
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 3.9
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 47.16
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 20.3
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 24.82
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 59.2
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 17.79
+    Mn:
+      pct_at_0.3_equiv: 12.1
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 39.38
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T05:22:21.534740'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T05:25:38.983901'
+  status: analysed
+  descriptor: {}
+  log_k_tuned:
+    Al: 7.56
+    Fe: 7.51
+    Cu: 8.62
+    Co: 5.49
+    Ni: 6.15
+    Mn: 3.17
+  scout_flags:
+  - metal: Fe
+    literature: 7.51
+    tuned: 10.0
+    delta: 2.49
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 99.8
+      removed_0.3: false
+      pct_at_1.0_equiv: 0.4
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 55.09
+    Fe:
+      pct_at_0.3_equiv: 1.2
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 48.33
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 3.9
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 47.16
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 20.3
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 24.82
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 59.2
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 17.79
+    Mn:
+      pct_at_0.3_equiv: 12.1
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 39.38
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T05:25:40.362686'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T05:34:22.067944'
+  status: analysed
+  descriptor: {}
+  log_k_tuned:
+    Al: 8.9
+    Fe: 10.0
+    Cu: 8.62
+    Co: 6.15
+    Ni: 6.95
+    Mn: 4.0
+  scout_flags:
+  - metal: Al
+    literature: 8.9
+    tuned: 7.56
+    delta: 1.34
+    action: flagged
+  - metal: Fe
+    literature: 10.0
+    tuned: 7.51
+    delta: 2.49
+    action: flagged
+  - metal: Co
+    literature: 6.15
+    tuned: 5.49
+    delta: 0.66
+    action: flagged
+  - metal: Ni
+    literature: 6.95
+    tuned: 6.15
+    delta: 0.8
+    action: flagged
+  - metal: Mn
+    literature: 4.0
+    tuned: 3.17
+    delta: 0.83
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 99.8
+      removed_0.3: false
+      pct_at_1.0_equiv: 0.4
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 55.09
+    Fe:
+      pct_at_0.3_equiv: 1.2
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 48.33
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 3.9
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 47.16
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 20.3
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 24.82
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 59.2
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 17.79
+    Mn:
+      pct_at_0.3_equiv: 12.1
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 39.38
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T05:34:23.479980'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T05:36:41.343944'
+  status: analysed
+  descriptor: {}
+  log_k_tuned:
+    Al: 7.64
+    Fe: 7.52
+    Cu: 8.62
+    Co: 5.49
+    Ni: 6.52
+    Mn: 3.83
+  scout_flags:
+  - metal: Al
+    literature: 7.64
+    tuned: 8.9
+    delta: 1.26
+    action: flagged
+  - metal: Fe
+    literature: 7.52
+    tuned: 10.0
+    delta: 2.48
+    action: flagged
+  - metal: Co
+    literature: 5.49
+    tuned: 6.15
+    delta: 0.66
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 99.8
+      removed_0.3: false
+      pct_at_1.0_equiv: 0.4
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 55.09
+    Fe:
+      pct_at_0.3_equiv: 1.2
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 48.33
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 3.9
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 47.16
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 20.3
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 24.82
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 59.2
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 17.79
+    Mn:
+      pct_at_0.3_equiv: 12.1
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 39.38
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T05:36:42.805955'
+- modifier_slug: edta
+  modifier_name: Ethylenediaminetetraacetic acid tetrasodium salt (Na4EDTA)
+  timestamp: '2026-07-22T05:37:13.593927'
+  status: analysed
+  descriptor: {}
+  log_k_tuned:
+    Al: 16.13
+    Fe: 14.27
+    Cu: 18.8
+    Co: 16.31
+    Ni: 18.62
+    Mn: 13.81
+  scout_flags: []
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 0.0
+      removed_0.3: true
+      pct_at_1.0_equiv: 99.9
+      removed_1.0: false
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 40.69
+    Fe:
+      pct_at_0.3_equiv: 0.0
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.9
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 43.62
+    Cu:
+      pct_at_0.3_equiv: 73.2
+      protected_0.3: true
+      pct_at_1.0_equiv: 14.6
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 30.0
+    Co:
+      pct_at_0.3_equiv: 91.2
+      protected_0.3: true
+      pct_at_1.0_equiv: 15.2
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 27.62
+    Ni:
+      pct_at_0.3_equiv: 99.9
+      protected_0.3: true
+      pct_at_1.0_equiv: 99.9
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 14.29
+    Mn:
+      pct_at_0.3_equiv: 0.0
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.1
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 25.22
+  figure: experiments/edta_model_vs_exp.png
+  species_contribution: experiments/edta_species_contribution.png
+  precip_order_figs:
+  - experiments/single/edta_open/edta_open_precip_order.png
+  - experiments/single/edta_closed/edta_closed_precip_order.png
+  - experiments/single/edta_partial/edta_partial_precip_order.png
+  completed: '2026-07-22T05:37:15.958245'
+bo_log:
+- timestamp: '2026-07-21T21:34:56.284911'
+  n_runs: 0
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-21T21:44:05.271058'
+  n_runs: 1
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T02:51:09.285521'
+  n_runs: 2
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T02:54:21.815216'
+  n_runs: 3
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T02:55:15.651170'
+  n_runs: 4
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T02:56:07.872798'
+  n_runs: 5
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T02:56:57.387514'
+  n_runs: 6
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T03:15:55.361756'
+  n_runs: 7
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T03:21:08.885306'
+  n_runs: 8
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T03:31:17.400534'
+  n_runs: 9
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T03:38:53.389031'
+  n_runs: 10
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T03:48:43.548099'
+  n_runs: 11
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T04:02:48.423132'
+  n_runs: 12
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T04:05:17.515533'
+  n_runs: 13
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T04:06:07.570364'
+  n_runs: 14
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T04:07:40.342467'
+  n_runs: 15
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T04:14:49.411878'
+  n_runs: 16
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T04:36:42.728438'
+  n_runs: 17
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T04:38:50.787456'
+  n_runs: 18
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T04:46:01.924170'
+  n_runs: 19
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T04:47:08.904507'
+  n_runs: 20
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T04:49:49.278067'
+  n_runs: 21
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T04:51:41.078097'
+  n_runs: 22
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T04:53:38.024663'
+  n_runs: 23
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T04:58:28.416444'
+  n_runs: 24
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T05:02:05.076367'
+  n_runs: 25
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T05:04:38.045920'
+  n_runs: 26
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T05:06:13.254550'
+  n_runs: 27
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T05:07:54.523646'
+  n_runs: 28
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T05:08:30.162519'
+  n_runs: 29
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T05:11:16.534349'
+  n_runs: 30
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T05:12:28.428861'
+  n_runs: 31
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T05:13:39.352202'
+  n_runs: 32
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T05:15:09.821366'
+  n_runs: 33
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T05:17:22.334877'
+  n_runs: 34
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T05:18:41.861427'
+  n_runs: 35
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T05:19:32.959999'
+  n_runs: 36
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T05:20:20.069689'
+  n_runs: 37
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T05:20:53.015063'
+  n_runs: 38
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T05:22:21.573136'
+  n_runs: 39
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T05:25:40.404105'
+  n_runs: 40
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T05:34:23.523332'
+  n_runs: 41
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T05:36:42.846694'
+  n_runs: 42
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T05:37:15.999611'
+  n_runs: 43
+  status: "stub \u2014 Phase 2 not implemented"
+phase_aliases:
+  sit.dat:
+    Al(OH)3(am): Gibbsite
+    Fe(OH)3(a): Ferrihydrite(am)

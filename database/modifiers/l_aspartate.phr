@@ -1,0 +1,54 @@
+# Thermodynamic data for L-aspartic acid monosodium salt monohydrate
+# Source: NIST Standard Reference Database 46 Version 8.0
+
+SOLUTION_MASTER_SPECIES
+# Element  MasterSpecies  Alkalinity  Formula  GramFormWt
+Asp    Asp-2    0    C4H7NO4    130.079
+
+SOLUTION_SPECIES
+
+# Identity reaction (required by PHREEQC for master species)
+Asp-2 = Asp-2
+    log_k 0
+
+# Protonation steps
+Asp-2 + 1H+ = HAsp-1
+    log_k 1.99
+
+Asp-2 + 2H+ = H2Asp
+    log_k 5.89
+
+Asp-2 + 3H+ = H3Asp+1
+    log_k 15.79
+
+# Metal complexes
+Cu+2 + Asp-2 = CuAsp
+    log_k 8.62
+
+Cu+2 + 2Asp-2 = CuAsp2-2
+    log_k 14.00
+
+Co+2 + Asp-2 = CoAsp
+    log_k 5.49
+
+Co+2 + 2Asp-2 = CoAsp2-2
+    log_k 10.50
+
+Ni+2 + Asp-2 = NiAsp
+    log_k 6.52
+
+Ni+2 + 2Asp-2 = NiAsp2-2
+    log_k 11.00
+
+Mn+2 + Asp-2 = MnAsp
+    log_k 3.20
+
+Mn+2 + 2Asp-2 = MnAsp2-2
+    log_k 2.50
+
+Al+3 + Asp-2 = AlAsp+1
+    log_k 3.50
+
+# Fe suppressed: delay in closed/partial is pH-controlled, not complexation-controlled.
+Fe+3 + Asp-2 = FeAsp+1
+    log_k -999
