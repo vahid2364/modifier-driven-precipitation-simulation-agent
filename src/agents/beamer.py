@@ -212,6 +212,59 @@ def _build_tex(modifier: str, slug: str, scorecard: dict, figure_path: str,
   \end{{beamercolorbox}}
 \end{{frame}}
 
+%% ── Slide 5: Agentic Pipeline ───────────────────────────────────────────────
+\begin{{frame}}{{MDPSA: Multi-Agent Dissolution--Precipitation Simulation}}
+  \begin{{columns}}[T]
+    \begin{{column}}{{0.54\textwidth}}
+      \small
+      \begin{{enumerate}}
+        \setlength{{\itemsep}}{{5pt}}
+        \item \textbf{{ScoutAgent}} \textemdash{} queries Claude (LLM) for NIST
+              formation constants; writes \texttt{{.phr}} (PHREEQC reactions)
+              and \texttt{{.yaml}} (species list).
+        \item \textbf{{SimRunnerAgent}} \textemdash{} executes PHREEQC for three
+              CO$_2$ scenarios (open, closed, partial); parses output CSVs.
+        \item \textbf{{AnalystAgent}} \textemdash{} computes dissolved-metal
+              fractions, RMSE vs. experiment, selectivity scorecard, and
+              species-contribution figures.
+        \item \textbf{{BOAgent}} \textemdash{} Bayesian optimization (Gaussian
+              process) over log$\,K$ space; suggests next candidate modifier.
+        \item \textbf{{BeamerAgent}} \textemdash{} assembles and compiles this
+              XeLaTeX presentation automatically.
+      \end{{enumerate}}
+    \end{{column}}
+    \begin{{column}}{{0.44\textwidth}}
+      \small
+      \begin{{block}}{{Key design choices}}
+        \begin{{itemize}}
+          \setlength{{\itemsep}}{{3pt}}
+          \item LangGraph \texttt{{StateGraph}} orchestration
+          \item SIT activity model (sit.dat)
+          \item NaOH titration: 0 \textrightarrow{} 1.0 equiv in 60 steps
+          \item Modifier dose fixed at 0.20 mol/kgw
+          \item Comparison at 0.3 and 1.0 equiv NaOH
+          \item Target metals: Cu, Co, Ni; impurities: Al, Fe, Mn
+        \end{{itemize}}
+      \end{{block}}
+      \vspace{{4pt}}
+      \begin{{block}}{{Output}}
+        \begin{{itemize}}
+          \setlength{{\itemsep}}{{3pt}}
+          \item Model-vs-experiment figure
+          \item Species-contribution breakdown
+          \item Selectivity scorecard (RMSE, verdict)
+          \item Auto-compiled PDF (this file)
+        \end{{itemize}}
+      \end{{block}}
+    \end{{column}}
+  \end{{columns}}
+  \vspace{{4pt}}
+  \begin{{beamercolorbox}}[rounded=true, shadow=false, wd=\textwidth]{{block body}}
+    \tiny
+    Pipeline: LangGraph StateGraph; LLM: Anthropic Claude (claude-sonnet-4-5). PHREEQC v3, TeX Live 2026.
+  \end{{beamercolorbox}}
+\end{{frame}}
+
 \end{{document}}
 """
     return tex
