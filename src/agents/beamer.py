@@ -88,9 +88,9 @@ def _build_tex(modifier: str, slug: str, scorecard: dict, figure_path: str,
     impurity_metals = cfg["analyst"].get("impurity_metals", ["Al","Fe"])
     date_str = datetime.utcnow().strftime("%Y-%m-%d")
 
-    # Figure filenames relative to experiments/ directory
-    fig_main = Path(figure_path).name if figure_path else ""
-    fig_sp   = Path(sp_path).name    if sp_path    else ""
+    # Figure paths relative to slide_dir (already copied to figures/ subdir)
+    fig_main = figure_path if figure_path else ""
+    fig_sp   = sp_path     if sp_path     else ""
 
     sc_rows   = _scorecard_rows(scorecard, equiv_pts, target_metals, impurity_metals)
     lk_rows   = _logk_table_rows(complexes)
