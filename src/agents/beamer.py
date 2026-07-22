@@ -162,7 +162,7 @@ def _build_tex(modifier: str, slug: str, scorecard: dict, figure_path: str,
   \renewcommand{{\arraystretch}}{{1.3}}
   \begin{{tabular}}{{{col_spec}}}
     \toprule
-    \textbf{{Metal}} & \textbf{{Role}} & {equiv_hdrs} & \textbf{{RMSE (pp)}} & \textbf{{Verdict}} \\\\
+    \textbf{{Metal}} & \textbf{{Role}} & {equiv_hdrs} & \textbf{{RMSE (pp)}} & \textbf{{Verdict}} \\
     \midrule
 {sc_rows}
     \bottomrule
@@ -185,7 +185,7 @@ def _build_tex(modifier: str, slug: str, scorecard: dict, figure_path: str,
       \renewcommand{{\arraystretch}}{{1.25}}
       \begin{{tabular}}{{lr}}
         \toprule
-        \textbf{{Species}} & \textbf{{log K}} \\\\
+        \textbf{{Species}} & \textbf{{log K}} \\
         \midrule
 {lk_rows}
         \bottomrule
@@ -277,40 +277,22 @@ class BeamerAgent(BaseAgent):
         tex_path.write_text(tex, encoding="utf-8")
         print(f"[{self.name}] Written : {tex_path}")
 
-        # Compile with xelatex — output aux/log to build/, pdf to slide_dir
+        # Compile with xelatex (TeX Live compatible — no -aux-directory)
         try:
             for _ in range(2):
                 subprocess.run(
-                    [
-                        "xelatex",
-                        "-interaction=nonstopmode",
-                        f"-output-directory={slide_dir.resolve()}",
-                        f"-aux-directory={build_dir.resolve()}",
-                        tex_path.name,
-                    ],
+                    ["xelatex", "-interaction=nonstopmode", tex_path.name],
                     cwd=str(slide_dir.resolve()),
-                    capture_output=True, text=True, timeout=90,
+                    capture_output=True, text=True, timeout=120,
                 )
+            # Move build artifacts to build/
+            for ext in ("aux", "log", "toc", "nav", "out", "snm", "vrb"):
+                art = slide_dir / f"{slug}_summary.{ext}"
+                if art.exists():
+                    shutil.move(str(art), str(build_dir / art.name))
             print(f"[{self.name}] Compiled: {pdf_path}")
         except FileNotFoundError:
-            # -aux-directory is MiKTeX only; retry without it for TeX Live
-            try:
-                for _ in range(2):
-                    result = subprocess.run(
-                        ["xelatex", "-interaction=nonstopmode", tex_path.name],
-                        cwd=str(slide_dir.resolve()),
-                        capture_output=True, text=True, timeout=90,
-                    )
-                # Move build artifacts to build/
-                for ext in ("aux", "log", "toc", "nav", "out", "snm", "vrb"):
-                    art = slide_dir / f"{slug}_summary.{ext}"
-                    if art.exists():
-                        shutil.move(str(art), str(build_dir / art.name))
-                print(f"[{self.name}] Compiled: {pdf_path}")
-            except FileNotFoundError:
-                print(f"[{self.name}] xelatex not found — .tex written but not compiled.")
-            except Exception as e:
-                print(f"[{self.name}] Compilation error: {e}")
+            print(f"[{self.name}] xelatex not found — .tex written but not compiled.")
         except Exception as e:
             print(f"[{self.name}] Compilation error: {e}")
 
