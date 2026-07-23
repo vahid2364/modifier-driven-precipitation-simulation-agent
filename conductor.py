@@ -10,13 +10,17 @@ Phase 2 (BO active):
 
 from langgraph.graph import StateGraph, END
 from state import SimState
-from src.agents import DataAgent, ScoutAgent, SimRunnerAgent, AnalystAgent, BOAgent, ErrorTracerAgent, BeamerAgent
+from src.agents import DataAgent, ExperimentAgent, ScoutAgent, SimRunnerAgent, AnalystAgent, BOAgent, ErrorTracerAgent, BeamerAgent
 
 MAX_RETRIES = 2   # max ErrorTracer → SimRunner retry cycles
 
 
 def _data_node(state: SimState) -> SimState:
     return DataAgent().run(state)
+
+
+def _experiment_node(state: SimState) -> SimState:
+    return ExperimentAgent().run(state)
 
 
 def _scout_node(state: SimState) -> SimState:
@@ -45,7 +49,7 @@ def _beamer_node(state: SimState) -> SimState:
 
 
 def _route_after_data(state: SimState) -> str:
-    return "scout"
+    return "experiment"
 
 
 def _route_after_scout(state: SimState) -> str:
@@ -94,6 +98,7 @@ def build_conductor() -> StateGraph:
     graph = StateGraph(SimState)
 
     graph.add_node("data",         _data_node)
+    graph.add_node("experiment",   _experiment_node)
     graph.add_node("scout",        _scout_node)
     graph.add_node("sim_runner",   _sim_runner_node)
     graph.add_node("error_tracer", _error_tracer_node)
@@ -104,8 +109,9 @@ def build_conductor() -> StateGraph:
     graph.set_entry_point("data")
 
     graph.add_conditional_edges("data", _route_after_data, {
-        "scout": "scout",
+        "experiment": "experiment",
     })
+    graph.add_edge("experiment", "scout")
     graph.add_conditional_edges("scout", _route_after_scout, {
         "sim_runner": "sim_runner", END: END,
     })

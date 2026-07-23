@@ -1,3 +1,5 @@
+experiment_xlsx: /Users/vahid/Documents/GitHub/Matminer/Telescope Data and PPTs/organic modifier/2025_12 CC-NRCan Organic Modifier Exps Updated4.xlsx
+
 leachate:
   name: NMC532
   metals:
@@ -3762,6 +3764,491 @@ runs:
   - experiments/single/edta_closed/edta_closed_precip_order.png
   - experiments/single/edta_partial/edta_partial_precip_order.png
   completed: '2026-07-22T05:37:15.958245'
+- modifier_slug: edta
+  modifier_name: Ethylenediaminetetraacetic acid tetrasodium salt (Na4EDTA)
+  timestamp: '2026-07-22T05:47:32.639435'
+  status: analysed
+  descriptor: {}
+  log_k_tuned:
+    Al: 16.13
+    Fe: 14.27
+    Cu: 18.8
+    Co: 16.31
+    Ni: 18.62
+    Mn: 13.81
+  scout_flags: []
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 0.0
+      removed_0.3: true
+      pct_at_1.0_equiv: 99.9
+      removed_1.0: false
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 40.69
+    Fe:
+      pct_at_0.3_equiv: 0.0
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.9
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 43.62
+    Cu:
+      pct_at_0.3_equiv: 73.2
+      protected_0.3: true
+      pct_at_1.0_equiv: 14.6
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 30.0
+    Co:
+      pct_at_0.3_equiv: 91.2
+      protected_0.3: true
+      pct_at_1.0_equiv: 15.2
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 27.62
+    Ni:
+      pct_at_0.3_equiv: 99.9
+      protected_0.3: true
+      pct_at_1.0_equiv: 99.9
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 14.29
+    Mn:
+      pct_at_0.3_equiv: 0.0
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.1
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 25.22
+  figure: experiments/edta_model_vs_exp.png
+  species_contribution: experiments/edta_species_contribution.png
+  precip_order_figs:
+  - experiments/single/edta_open/edta_open_precip_order.png
+  - experiments/single/edta_closed/edta_closed_precip_order.png
+  - experiments/single/edta_partial/edta_partial_precip_order.png
+  completed: '2026-07-22T05:47:35.137849'
+- modifier_slug: edta
+  modifier_name: Ethylenediaminetetraacetic acid tetrasodium salt (Na4EDTA)
+  timestamp: '2026-07-22T05:54:00.743918'
+  status: analysed
+  descriptor: {}
+  log_k_tuned:
+    Al: 16.13
+    Fe: 14.27
+    Cu: 18.8
+    Co: 16.31
+    Ni: 18.62
+    Mn: 13.81
+  scout_flags: []
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 0.0
+      removed_0.3: true
+      pct_at_1.0_equiv: 99.9
+      removed_1.0: false
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 40.69
+    Fe:
+      pct_at_0.3_equiv: 0.0
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.9
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 43.62
+    Cu:
+      pct_at_0.3_equiv: 73.2
+      protected_0.3: true
+      pct_at_1.0_equiv: 14.6
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 30.0
+    Co:
+      pct_at_0.3_equiv: 91.2
+      protected_0.3: true
+      pct_at_1.0_equiv: 15.2
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 27.62
+    Ni:
+      pct_at_0.3_equiv: 99.9
+      protected_0.3: true
+      pct_at_1.0_equiv: 99.9
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 14.29
+    Mn:
+      pct_at_0.3_equiv: 0.0
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.1
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 25.22
+  figure: experiments/edta_model_vs_exp.png
+  species_contribution: experiments/edta_species_contribution.png
+  precip_order_figs:
+  - experiments/single/edta_open/edta_open_precip_order.png
+  - experiments/single/edta_closed/edta_closed_precip_order.png
+  - experiments/single/edta_partial/edta_partial_precip_order.png
+  completed: '2026-07-22T05:54:03.366499'
+- modifier_slug: edta
+  modifier_name: Ethylenediaminetetraacetic acid tetrasodium salt (Na4EDTA)
+  timestamp: '2026-07-22T05:54:57.220847'
+  status: analysed
+  descriptor: {}
+  log_k_tuned:
+    Al: 16.13
+    Fe: 14.27
+    Cu: 18.8
+    Co: 16.31
+    Ni: 18.62
+    Mn: 13.81
+  scout_flags: []
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 0.0
+      removed_0.3: true
+      pct_at_1.0_equiv: 99.9
+      removed_1.0: false
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 40.69
+    Fe:
+      pct_at_0.3_equiv: 0.0
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.9
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 43.62
+    Cu:
+      pct_at_0.3_equiv: 73.2
+      protected_0.3: true
+      pct_at_1.0_equiv: 14.6
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 30.0
+    Co:
+      pct_at_0.3_equiv: 91.2
+      protected_0.3: true
+      pct_at_1.0_equiv: 15.2
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 27.62
+    Ni:
+      pct_at_0.3_equiv: 99.9
+      protected_0.3: true
+      pct_at_1.0_equiv: 99.9
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 14.29
+    Mn:
+      pct_at_0.3_equiv: 0.0
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.1
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 25.22
+  figure: experiments/edta_model_vs_exp.png
+  species_contribution: experiments/edta_species_contribution.png
+  precip_order_figs:
+  - experiments/single/edta_open/edta_open_precip_order.png
+  - experiments/single/edta_closed/edta_closed_precip_order.png
+  - experiments/single/edta_partial/edta_partial_precip_order.png
+  completed: '2026-07-22T05:54:59.615916'
+- modifier_slug: edta
+  modifier_name: Ethylenediaminetetraacetic acid tetrasodium salt (Na4EDTA)
+  timestamp: '2026-07-22T06:00:17.574947'
+  status: analysed
+  descriptor: {}
+  log_k_tuned:
+    Al: 16.13
+    Fe: 14.27
+    Cu: 18.8
+    Co: 16.31
+    Ni: 18.62
+    Mn: 13.81
+  scout_flags: []
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 0.0
+      removed_0.3: true
+      pct_at_1.0_equiv: 99.9
+      removed_1.0: false
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 40.69
+    Fe:
+      pct_at_0.3_equiv: 0.0
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.9
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 43.62
+    Cu:
+      pct_at_0.3_equiv: 73.2
+      protected_0.3: true
+      pct_at_1.0_equiv: 14.6
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 30.0
+    Co:
+      pct_at_0.3_equiv: 91.2
+      protected_0.3: true
+      pct_at_1.0_equiv: 15.2
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 27.62
+    Ni:
+      pct_at_0.3_equiv: 99.9
+      protected_0.3: true
+      pct_at_1.0_equiv: 99.9
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 14.29
+    Mn:
+      pct_at_0.3_equiv: 0.0
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.1
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 25.22
+  figure: experiments/edta_model_vs_exp.png
+  species_contribution: experiments/edta_species_contribution.png
+  precip_order_figs:
+  - experiments/single/edta_open/edta_open_precip_order.png
+  - experiments/single/edta_closed/edta_closed_precip_order.png
+  - experiments/single/edta_partial/edta_partial_precip_order.png
+  completed: '2026-07-22T06:00:19.975117'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-22T06:02:34.572001'
+  status: analysed
+  descriptor: {}
+  log_k_tuned:
+    Al: 7.64
+    Fe: 8.84
+    Cu: 8.62
+    Co: 5.52
+    Ni: 5.95
+    Mn: 3.83
+  scout_flags:
+  - metal: Fe
+    literature: 8.84
+    tuned: 7.52
+    delta: 1.32
+    action: flagged
+  - metal: Ni
+    literature: 5.95
+    tuned: 6.52
+    delta: 0.57
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 99.8
+      removed_0.3: false
+      pct_at_1.0_equiv: 0.4
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 55.09
+    Fe:
+      pct_at_0.3_equiv: 1.2
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 48.33
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 3.9
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 47.16
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 20.3
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 24.82
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 59.2
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 17.79
+    Mn:
+      pct_at_0.3_equiv: 12.1
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 39.38
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-22T06:02:36.056777'
+- modifier_slug: l_aspartate
+  modifier_name: L-aspartic acid monosodium salt monohydrate
+  timestamp: '2026-07-23T02:14:26.752176'
+  status: analysed
+  descriptor:
+    denticity: 3
+    charge: -2
+    n_pka: 3
+    log_k_Al: 7.87
+    log_k_Fe: 10.0
+    log_k_Cu: 8.89
+    log_k_Co: 5.95
+    log_k_Ni: 7.16
+    log_k_Mn: 3.7
+    log_k2_Al: null
+    log_k2_Fe: 17.2
+    log_k2_Cu: 15.89
+    log_k2_Co: 10.23
+    log_k2_Ni: 12.42
+    log_k2_Mn: 5.63
+  log_k_tuned:
+    Al: 7.87
+    Fe: 10.0
+    Cu: 8.89
+    Co: 5.95
+    Ni: 7.16
+    Mn: 3.7
+  scout_flags:
+  - metal: Fe
+    literature: 10.0
+    tuned: 8.84
+    delta: 1.16
+    action: flagged
+  - metal: Ni
+    literature: 7.16
+    tuned: 5.95
+    delta: 1.21
+    action: flagged
+  scorecard:
+    Al:
+      pct_at_0.3_equiv: 99.8
+      removed_0.3: false
+      pct_at_1.0_equiv: 1.7
+      removed_1.0: true
+      score: 1
+      role: impurity
+      max_score: 2
+      rmse: 54.87
+    Fe:
+      pct_at_0.3_equiv: 2.9
+      removed_0.3: true
+      pct_at_1.0_equiv: 0.0
+      removed_1.0: true
+      score: 2
+      role: impurity
+      max_score: 2
+      rmse: 45.44
+    Cu:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 14.8
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 32.84
+    Co:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 0.5
+      protected_1.0: false
+      score: 1
+      role: target
+      max_score: 2
+      rmse: 33.37
+    Ni:
+      pct_at_0.3_equiv: 99.8
+      protected_0.3: true
+      pct_at_1.0_equiv: 69.9
+      protected_1.0: true
+      score: 2
+      role: target
+      max_score: 2
+      rmse: 14.31
+    Mn:
+      pct_at_0.3_equiv: 26.5
+      protected_0.3: false
+      pct_at_1.0_equiv: 0.0
+      protected_1.0: false
+      score: 0
+      role: target
+      max_score: 2
+      rmse: 20.86
+  figure: experiments/l_aspartate_model_vs_exp.png
+  species_contribution: experiments/l_aspartate_species_contribution.png
+  precip_order_figs:
+  - experiments/single/l_aspartate_open/l_aspartate_open_precip_order.png
+  - experiments/single/l_aspartate_closed/l_aspartate_closed_precip_order.png
+  - experiments/single/l_aspartate_partial/l_aspartate_partial_precip_order.png
+  completed: '2026-07-23T02:14:28.255432'
 bo_log:
 - timestamp: '2026-07-21T21:34:56.284911'
   n_runs: 0
@@ -3894,6 +4381,24 @@ bo_log:
   status: "stub \u2014 Phase 2 not implemented"
 - timestamp: '2026-07-22T05:37:15.999611'
   n_runs: 43
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T05:47:35.181165'
+  n_runs: 44
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T05:54:03.411081'
+  n_runs: 45
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T05:54:59.657186'
+  n_runs: 46
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T06:00:20.017294'
+  n_runs: 47
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-22T06:02:36.100800'
+  n_runs: 48
+  status: "stub \u2014 Phase 2 not implemented"
+- timestamp: '2026-07-23T02:14:28.298467'
+  n_runs: 49
   status: "stub \u2014 Phase 2 not implemented"
 phase_aliases:
   sit.dat:

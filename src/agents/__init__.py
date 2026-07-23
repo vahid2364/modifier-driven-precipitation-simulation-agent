@@ -1,4 +1,5 @@
 from .data_agent import DataAgent
+from .experiment_agent import ExperimentAgent
 from .scout import ScoutAgent
 from .sim_runner import SimRunnerAgent
 from .analyst import AnalystAgent
