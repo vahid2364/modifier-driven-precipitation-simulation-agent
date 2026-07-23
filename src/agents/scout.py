@@ -145,7 +145,7 @@ class ScoutAgent(BaseAgent):
 
         print(f"[{self.name}] Scouting: {state['modifier_name']}")
 
-        # ── 1. Query Claude ────────────────────────────────────────────────────
+        # ── 1. Query Claude (LLM) for structure, pKa, and any gaps left by DataAgent ──
         response = self.client.messages.create(
             model=self.model,
             max_tokens=4096,
@@ -164,8 +164,6 @@ class ScoutAgent(BaseAgent):
         try:
             data = json.loads(raw)
         except json.JSONDecodeError as e:
-            # Attempt to salvage a truncated response: drop the incomplete last entry
-            # and close the JSON structure so we can parse whatever arrived intact.
             repaired = _repair_truncated_json(raw)
             if repaired is not None:
                 print(f"[{self.name}] JSON truncated — repaired by dropping incomplete tail")
@@ -174,8 +172,30 @@ class ScoutAgent(BaseAgent):
                 state["error"] = f"ScoutAgent: JSON parse failed — {e}\nRaw: {raw}"
                 return state
 
-        print(f"[{self.name}] Retrieved: {json.dumps(data, indent=2)}")
+        print(f"[{self.name}] LLM retrieved: {json.dumps(data, indent=2)}")
         data = _validate_charges(data, self.name)
+
+        # ── 1b. Override LLM log_k values with authoritative DB values from DataAgent ──
+        db_constants = state.get("db_constants")
+        if db_constants:
+            _type_map = {"ML": "ML", "ML2": "ML2", "MOHL": "MOHL", "MHL": "MHL"}
+            n_overrides = 0
+            for cplx in data.get("complexes", []):
+                metal = cplx["metal"]
+                ctype = cplx.get("type")
+                db_entry = db_constants.get(metal, {}).get(_type_map.get(ctype, ""))
+                if db_entry and db_entry["log_k"] is not None:
+                    old = cplx.get("log_k")
+                    cplx["log_k"] = db_entry["log_k"]
+                    cplx["source"] = "NIST SRD 46 v8.0 (local DB)"
+                    if db_entry["uncertain"]:
+                        cplx["source"] += " [uncertain]"
+                    if old != db_entry["log_k"]:
+                        print(f"[{self.name}] DB override {metal} {ctype}: "
+                              f"{old} → {db_entry['log_k']}"
+                              + (" [uncertain]" if db_entry["uncertain"] else ""))
+                        n_overrides += 1
+            print(f"[{self.name}] DB overrides applied: {n_overrides}")
 
         # ── 2. Validate against any existing tuned values in run_config ────────
         flags     = []

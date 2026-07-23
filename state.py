@@ -13,6 +13,10 @@ class SimState(TypedDict):
     run_config:     dict            # loaded run_config.yaml contents (read by all agents)
     force_scout:    Optional[bool]  # if True, regenerate .phr/.yaml even if files exist
 
+    # ── DataAgent outputs ──────────────────────────────────────────────────────
+    db_constants:    Optional[dict]  # {metal: {type: {log_k, uncertain, confidence}}}
+    db_ligand_match: Optional[str]   # matched ligand name in NIST DB
+
     # ── ScoutAgent outputs ─────────────────────────────────────────────────────
     modifier_yaml_path:  Optional[str]   # config/modifiers/<slug>.yaml
     modifier_phr_path:   Optional[str]   # database/modifiers/<slug>.phr

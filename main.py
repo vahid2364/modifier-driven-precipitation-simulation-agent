@@ -35,6 +35,8 @@ def main():
         "config_path":        args.config,
         "force_scout":        args.force_scout,
         "run_config":         run_config,
+        "db_constants":       None,
+        "db_ligand_match":    None,
         "modifier_yaml_path": None,
         "modifier_phr_path":  None,
         "descriptor":         None,
